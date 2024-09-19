@@ -51,7 +51,9 @@ app.use((err, req, res, next) => {
   const message = err.message || 'Internal Server Error';
   
   res.setHeader('Access-Control-Allow-Origin', 'https://utkrisht25.github.io');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   return res.status(statusCode).json({
     success: false,
     statusCode,
